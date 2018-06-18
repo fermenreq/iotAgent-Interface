@@ -32,7 +32,7 @@ git clone https://github.com/telefonicaid/iotagent-json
 npm install
 ```
 
-3. Set up config.js Iotagent file, using docker containers IP address, apikey preferences,..
+3. Set up config-blank.js Iotagent file, using docker containers IP address, apikey preferences,..
 
 
 ```
@@ -60,5 +60,14 @@ config.defaultKey = 'here the api key you want';
 4. Run the agent.
 
 ```
-bin/iotagent-json config.js
+bin/iotagent-json 
+```
+
+If everything is correct you will see the above iotAgent response:
+
+```
+...
+p=IOTAUL.MQTT.Binding | srv=n/a | subsrv=n/a | msg=Starting MQTT binding | comp=IoTAgent
+time=2018-06-18T09:45:29.105Z | lvl=INFO | corr=88c715fe-e5c6-43df-82e3-0c9a5b9b0b83 | trans=88c715fe-e5c6-43df-82e3-0c9a5b9b0b83 | op=IOTAUL.MQTT.Binding | srv=n/a | subsrv=n/a | msg=MQTT Client connected | comp=IoTAgent
+...
 ```
