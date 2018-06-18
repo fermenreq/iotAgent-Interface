@@ -81,4 +81,19 @@ p=IOTAUL.MQTT.Binding | srv=n/a | subsrv=n/a | msg=Starting MQTT binding | comp=
 time=2018-06-18T09:45:29.105Z | lvl=INFO | corr=88c715fe-e5c6-43df-82e3-0c9a5b9b0b83 | trans=88c715fe-e5c6-43df-82e3-0c9a5b9b0b83 | op=IOTAUL.MQTT.Binding | srv=n/a | subsrv=n/a | msg=MQTT Client connected | comp=IoTAgent
 ...
 
+## Runing Scripts
+
+The following scripts make the  communication process between Orion and a real device. In this case we are using mosquitto 
+to simulate the use of an IOT device.
+
+Steps:
+
+1-Create device
+2-Create service
+3-Send meassures
+4-Request OCB data
+
 ```
+
+## Author
+Fernando Méndez Requena - fernando.mendez@atos.net
