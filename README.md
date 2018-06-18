@@ -19,12 +19,46 @@ A good way is to start it using docker compose to deploy the necessary services.
     Image: Mosquitto 1.4.8
 ```
 ## How to run ?:
-```
+
 1. Deploy services [Orion context broker, Mongo 3.2, Mosquitto 1.4.8]
-
-2. git clone https://github.com/telefonicaid/iotagent-json
-3. Set up config.js Iotagent file, i.e docker containers IP address, apikey preferences,..
-
+```
+docker-compose up -d
 ```
 
+2. Clone the agent and install it:
 
+```
+git clone https://github.com/telefonicaid/iotagent-json
+npm install
+```
+
+3. Set up config.js Iotagent file, using docker containers IP address, apikey preferences,..
+
+
+```
+...
+contextBroker: {
+        host: 'docker service IP',
+        port: '1026'
+    },
+    server: {
+        port: 4041
+    },
+    deviceRegistry: {
+        type: 'mongodb'
+    },
+    mongodb: {
+        host: 'docker service IP',
+        port: '27017',
+        db: 'iotagentjson'
+},
+
+....
+config.defaultKey = 'here the api key you want';
+
+```
+4. Run the agent.
+
+```
+bin/iotagent-json config.js
+```
