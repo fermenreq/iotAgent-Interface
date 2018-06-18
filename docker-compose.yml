@@ -1,0 +1,25 @@
+version : "2"
+
+services:
+  mongo:
+    image: mongo:3.2
+    command: --nojournal
+    ports:
+      - "27017:27017"
+    expose:
+      - "27017"
+  orion:
+    image: fiware/orion
+    links:
+      - mongo
+    ports:
+      - "1026:1026"
+    command: -dbhost mongo
+    expose:
+      - "1026"
+  mosquitto:
+    image: ansi/mosquitto
+    ports:
+      - "1883:1883"
+    expose:
+      - "1883"
