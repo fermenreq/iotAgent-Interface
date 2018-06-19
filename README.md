@@ -6,8 +6,9 @@ This project shows you how to use and connect Fiware IotAgent in an easy way
 1. Linux SO
 2. Docker & Docker-compose
 3. Fiware IotAgent
-     Iot Agent - JSON: https://github.com/telefonicaid/iotagent-json
      Iot Agent - Ultralight: https://github.com/telefonicaid/iotagent-ul
+4. Python
+5. Mosquitto v1.4.7
 
 ```
 
@@ -44,8 +45,9 @@ npm install
 
 3. Set up config.js Iotagent file, using docker containers IP address, apikey preferences,..
 
+4. Run the django app: ```sh demo/start.sh```
 
-```
+
 ...
 contextBroker: {
         host: 'docker service IP',
