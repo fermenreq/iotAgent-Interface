@@ -31,16 +31,17 @@ sudo apt-get install mosquitto
 
 ## How to run ?:
 
-1. Deploy services [Orion context broker, Mongo 3.2, Mosquitto 1.4.8]
-```
-docker-compose up -d
-```
 
-2. Clone the agent and install it:
+1. Clone the agent and install it:
 
 ```
 git clone https://github.com/telefonicaid/iotagent-ul
 npm install
+```
+
+2. Deploy services [Orion context broker, Mongo 3.2]
+```
+sh demo/start.sh
 ```
 
 3. Set up config.js Iotagent file, using docker containers IP address, apikey preferences,..
@@ -81,10 +82,9 @@ If everything is correct you will see the above iotAgent response:
 p=IOTAUL.MQTT.Binding | srv=n/a | subsrv=n/a | msg=Starting MQTT binding | comp=IoTAgent
 time=2018-06-18T09:45:29.105Z | lvl=INFO | corr=88c715fe-e5c6-43df-82e3-0c9a5b9b0b83 | trans=88c715fe-e5c6-43df-82e3-0c9a5b9b0b83 | op=IOTAUL.MQTT.Binding | srv=n/a | subsrv=n/a | msg=MQTT Client connected | comp=IoTAgent
 ...
+```
 
-4. Run the django app: ```sh demo/start.sh``` (if you want to see the data throw django app)
-
-
+```
 ## Runing Scripts
 
 The following scripts make the  communication process between Orion and a real device. In this case we are using mosquitto 
@@ -98,6 +98,7 @@ Steps:
 4-Request OCB data
 
 ```
+
 
 ## Author
 Fernando Méndez Requena - fernando.mendez@atos.net
